@@ -1,0 +1,85 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Service name</p>
+          <h1 class="page-header--lede heading-large">How should we contact you?</h1>
+        </header>
+
+       <form class="form" action="contact-handler" id="contact-boxes">
+        <fieldset class="form-group">
+          <legend class="visually-hidden">
+            Get a copy of your details sent by text message and email
+          </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="email" name="email" type="checkbox" value="true">
+            <label for="email">Email</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="text" name="text" type="checkbox" value="true">
+            <label for="text">Text message</label>
+          </div>
+                      <div class="multiple-choice multiple-radio">
+            <input id="text" name="text" type="checkbox" value="true">
+            <label for="text">Post</label>
+          </div>
+
+        </fieldset>
+
+
+          <div>
+          </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+        <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+      </form>
+      
+      </div>
+      
+    </div>      
+    
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
