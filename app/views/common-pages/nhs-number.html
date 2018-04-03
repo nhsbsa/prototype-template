@@ -1,0 +1,93 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Service name</p>
+          <h1 class="page-header--lede heading-large">Do you know your NHS number?</h1>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visually-hidden">Do you know your NHS number?</legend>
+
+              <div class="multiple-choice" data-target="getnhsno">
+                <input id="yes" name="hasnhsno" type="radio" value="Yes"> <label for="yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="no" name="hasnhsno" type="radio" value="No"> <label for="no">No</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="getnhsno">
+                <label class="form-label-bold" for="nhsno">What is your NHS number?</label>
+                <div>
+                  <input class="form-control" id="full-name-f2" name="full-name-f2" type="text">
+                </div>
+              </div>
+
+            </fieldset>
+
+            <br>
+
+            <details aria-hidden="true">
+              <summary>
+                <span class="summary">Where to find your NHS number</span>
+              </summary>
+              <div class="panel-indent">
+                <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+                <p>It is usually on any letter or document you have received from the NHS, such as:</p>
+                <ul class="list-bullet">
+                  <li>prescriptions</li>
+                  <li>test results</li>
+                  <li>appointment letters</li>
+                  <li>maternity notes</li>
+                  <li>on your NHS medical card</li>
+                </ul>
+              </div>
+            </details>
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+          </div>
+          
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+    
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary">Service name</p>
+            <h1 class="page-header--lede heading-large">What is your name?</h1>
+            </header>
+
+      <form action="" method="get" class="form">
+
+        <legend class="visuallyhidden">What’s your name?</legend>
+
+          <div class="form-text">
+
+            <div class="form-group">
+              <label class="form-label" for="firstname">First name</label>
+              <input class="form-control" id="firstname" name="firstname" type="text">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="middlename">Middle name</label>
+              <input class="form-control" id="middlename" name="firstname" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="last-name-third-party">Last name</label>
+              <input class="form-control" id="lastname" name="lastname" type="text">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

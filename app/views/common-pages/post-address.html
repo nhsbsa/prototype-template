@@ -1,0 +1,75 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+           <header class="page-header">
+            <p class="page-header--sub heading-secondary">
+            <!-- If a multi section form use this class and change service name to section title e.g Personal details -->
+            <!-- <span class="visuallyhidden">This section is </span> -->
+            Service name</p>
+            <h1 class="page-header--lede heading-large">What is your address?</h1>
+            </header>
+
+ 
+      <form action="address-c-handler" method="get" class="form">
+
+      <div class="form-group">
+        <label class="form-label" for="lineone">
+          Address line 1
+        </label>
+        <input class="form-control" id="registration-number" name="address-lineone" type="text" value="{{data['address-lineone']}}">
+      </div>
+        
+      <div class="form-group">
+              <label class="form-label" for="lineone">
+          Address line 2
+        </label>
+        <input class="form-control"  id="registration-number" name="address-linetwo" type="text" value="{{data['address-linetwo']}}">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="town">
+          Town or city
+        </label>
+        <input class="form-control" id="town" name="town" type="text">
+      </div>
+      
+        
+      <div class="form-group">
+        <label class="form-label" for="postcode">
+          Post code
+        </label>
+        <input class="form-control form-control-1-4"  id="registration-number" name="address-postcode" type="text" value="{{data['address-postcode']}}">
+      </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+      
+    </div>
+    
+  </div>
+
+</main>
+
+{% endblock %}
