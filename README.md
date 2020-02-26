@@ -1,4 +1,6 @@
 # NHSBSA prototype template
+[DEPRECATED. Do not use for any new projects] ⛔️ 
+We're moving to the NHS.UK kit 🎉
 
 
 ## About the prototype kit
