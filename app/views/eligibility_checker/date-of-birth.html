@@ -1,0 +1,72 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h2 class="heading-large">What is your date of birth?</h2>
+
+      <form action="dateofbirth-handler" method="get" class="form">
+
+<div class="form-group">
+  <fieldset data-required data-error="Cannot be blank">
+<!--     <legend class="form-label-bold">Date of birth</legend> -->
+    <p class="form-hint" id="dob-hint">For example, 31 07 1980</p>
+
+    <div class="form-date">
+      <div class="form-group form-group-day">
+        <label class="form-label" for="dob-day">Day</label>
+        <input class="form-control" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+      </div>
+
+      <div class="form-group form-group-month">
+        <label class="form-label" for="dob-month">Month</label>
+        <input class="form-control" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" min="0" max="12">
+      </div>
+
+      <div class="form-group form-group-year">
+        <label class="form-label" for="dob-year">Year</label>
+        <input class="form-control" id="dobyearBeta" name="dobyearBeta" type="text" pattern="[0-9]*" min="0" max="2016">
+      </div>
+    </div>
+  </fieldset>
+</div>
+<details class="form-group" role="group">
+  <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Why we ask for your date of birth</span></summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+      <p>
+       We use your date of birth to work out your age. Depending on where you live, your age could entitle you to help with NHS costs, such as free prescriptions or dental treatment.
+      </p>
+     </div>
+</details>
+<!--submit button-->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
