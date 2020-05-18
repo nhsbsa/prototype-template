@@ -1,0 +1,58 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+       <h1 class="heading-large">
+           You can't use this service because you live in Northern Ireland</h1>
+
+
+        <p>You can find more information about <a href="https://www.nidirect.gov.uk/articles/help-with-health-costs" id="nidirect">getting help with health costs in Northern Ireland at nidirect.gov</a>.</p>
+         <hr style="display: inline-block; background: #bfc1c3; border: 0; width: 100%; height: 1px; margin-top: 10px; margin-bottom: 6px; padding: 0px;">
+
+         <h2 class="heading-medium">If you are pregnant or have children</h2>
+  
+         <ul>
+         <li class="form-hint-list-item form-hint-list-item--valid">
+            
+             As part of the Healthy Start scheme, if you're at least than ten weeks pregnant or have a child under the age
+             of four, you may be entitled to:
+         </li>
+         </ul>
+     
+         <li class="form-hint-list-item form-hint-list-item--valid">
+             <span class="form-hint-list-item__indicator"></span>
+             £3.10 a week to spend on foods such as cow’s milk, baby formula, fresh or frozen fruit and vegetables
+         </li>
+         <li class="form-hint-list-item form-hint-list-item--valid">
+           <span class="form-hint-list-item__indicator"></span>
+           free vitamins
+       </li>
+       <p>Find out more about who qualifies for <a href='https:'>Healthy Start</a></p>
+
+
+
+
+        <div class="form-group">
+          <h2 class="heading-medium">Feedback</h2>
+        <p><a rel="noopener" id="finished-survey" href="https://www.snapsurveys.com/wh/s.asp?k=150212725926">What did you think of this service?</a> (Takes 30 seconds)<span class="visually-hidden"> (opens in a new tab)</span></p>
+      </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

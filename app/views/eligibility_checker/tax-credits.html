@@ -8,32 +8,31 @@ Eligibility Checker
 {% block content %}
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
-  <h1 class="heading-large">
-    Is your GP practice in Scotland or Wales?
-  </h1>
-  <br>
-<p>If you live near the border with Scotland or Wales, you could be registered with a GP who isn't in England</p>
+         <form action="taxcredits-handler" method="get" class="form">
 
-      <form action="gp-handler" method="get" class="form">
-        
-        <div class="form-group">
+    <h2 class="heading-large">Do you claim any benefits or tax credits?</h2>
+    <!-- <p>You can only get tax credits if you have child or you have a disability</p> -->
+
+
+         <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Is your GP practice in Scotland or Wales?
+              Do you claim any benefits or tax credits?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="gpScotWales" value="yes">
+              <input id="yes" type="radio" name="taxcredits" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="gpScotWales" value="no">
+              <input id="no" type="radio" name="taxcredits" value="no">
               <label for="no">No</label>
             </div>
             
@@ -46,9 +45,11 @@ Eligibility Checker
           </div>
 
       </form>
+      </div>
 
     </div>
     </div>
+
 </main>
 
 {% endblock %}

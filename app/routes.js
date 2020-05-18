@@ -8,82 +8,133 @@ router.get('/', function (req, res) {
 
 // add your routes here
 
-//import the person constructor
-var person = require("./person.js");
 
 module.exports = router
 
-//create an applicant
-var applicant = person.createPerson(
-  this.age = undefined,
-  this.multiBenefits = false,
-  this.need = undefined,
-  this.country = "england",
-  this.gp = undefined,
-  this.highlands = undefined,
-  this.education = undefined,
-  this.namedOnTaxCredits = undefined,
-  this.claimsTaxCredits = false,
-  this.incomeSupport = false,
-  this.isPregnant = false,
-  this.hasMatexCard = false,
-  this.hasMedexCard = false,
-  this.hasHealthCondition = false
-);
 
 var thisYear = 2020;
-var parentTc = false;
-var pregnancy = false;
-var medicalEx = false;
-var warPension = false;
 
-var variText = {
-    sightText : "sight test",
-    setSightText : function() {
-      if(applicant.country === "scotland") {
-        this.sightText = "eye exam";
-      }
-    }
-};
 
- 	// GP country
+
+
+
+ 	// Country
    router.get(/country-handler/, function (req, res) {
     if (req.query.countryBeta  === 'englandgp'){
       res.redirect('gp-country');
     } else if (req.query.countryBeta  === 'scotlandgp') {
-      applicant.country = "scotland";
+      
     res.redirect('highlands-islands');
     } else if (req.query.countryBeta  === 'walesgp') {
       res.redirect('date-of-birth');
     } else {
-      res.redirect('results/country-kickout-ni');
+      res.redirect('../kickout/country-kickout-ni');
     }
   });
 
    	// highlands or islands
      router.get(/highlands-handler/, function (req, res) {
       if (req.query.highIslands === 'yes') {
-      	applicant.highlands = "highlands";
+      
 	  	res.redirect('date-of-birth');
       } else {
         res.redirect('date-of-birth');
       }
     });
 
-    //dob
-    router.get(/dateofbirth-handler/, function (req, res) {
-      applicant.age = (thisYear - req.query.dobyearBeta);
-      console.log(applicant.age);
-      if (applicant.age >= 20) {
-        setPartnerText(applicant.partner);
-        res.render('checker/1/partner', {
-            'iwe' : iWe
-        });
-      } else if (applicant.age == 19) {
+
+	// GP in Scotland or Wales
+  router.get(/gp-handler/, function (req, res) {
+    if (req.query.gpScotWales === 'yes') {
+      
+    res.redirect('date-of-birth');
+    } else {
+      res.redirect('date-of-birth');
+    }
+  });
+    
+
+     // dob-handler
+     router.get(/dateofbirth-handler/, function (req, res) {
+      var age = (thisYear - req.query.dobyearBeta);
+      console.log(age);
+      if (age >= 20) {
         res.redirect('partner');
-      } else if (applicant.age >= 16) {
+      }
+        else if (age == 19) {
+          res.redirect('partner');
+      } else if (age >= 16) {
         res.redirect('full-time-education');
-      } else if (applicant.age <= 15) {
-        res.redirect('results/full-exemption-under-16');
+      } else if (age <= 15) {
+        res.redirect('../passport/full-exemption-under-16');
       }
     });
+ 
+ 	// FTE
+   router.get(/fte-higher-handler/, function (req, res) {
+    if (req.query.ftehigher === 'yes') {
+    
+    res.redirect('../passport/full-exemption-fte');
+    } else {
+      res.redirect('partner');
+    }
+  });
+  
+  // partner
+  router.get(/partner-handler/, function (req, res) {
+    if (req.query.partner === 'yes') {
+    
+    res.redirect('#');
+    } else {
+      res.redirect('tax-credits');
+    }
+  });
+
+   // tax-credits
+   router.get(/taxcredits-handler/, function (req, res) {
+    if (req.query.taxcredits === 'yes') {
+    
+    res.redirect('do-you-get-paid-uc');
+    } else {
+      res.redirect('#');
+    }
+  });
+
+  //UC
+  router.get(/getuc-handler/, function (req, res) {
+    if (req.query.getuc == 'yes') {
+      res.redirect('uc-claim-type');  
+    } else if (req.query.getuc == 'no') {
+      res.redirect('#');    
+      
+    } else {
+      res.redirect('while-waiting-uc');
+    }
+});
+
+// UC-type
+router.get(/uc-type-handler/, function (req, res) {
+  if (req.query.ucElement === 'yes') {
+  res.redirect('uc-income-935');
+  } else {
+    res.redirect('uc-income-435');
+  }
+});
+
+//UC 935
+router.get(/uc-income-935-handler/, function (req, res) {
+  if (req.query.ucIncome935 === 'yes') {
+  res.redirect('../passport/full-exemption-uc-935');
+  } else {
+    res.redirect('#');
+  }
+});
+
+//UC 935
+router.get(/uc-income-435-handler/, function (req, res) {
+  if (req.query.ucIncome435 === 'yes') {
+  res.redirect('../passport/full-exemption-uc');
+  } else {
+    res.redirect('#');
+  }
+});

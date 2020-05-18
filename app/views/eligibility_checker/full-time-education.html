@@ -8,18 +8,18 @@ Eligibility Checker
 {% block content %}
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+   <link rel="stylesheet" href="/public/stylesheets/smart_answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
-  <h1 class="heading-large">
-    Is your GP practice in Scotland or Wales?
-  </h1>
-  <br>
-<p>If you live near the border with Scotland or Wales, you could be registered with a GP who isn't in England</p>
+    <h2 class="heading-large">Are you in full time education?</h2>
 
-      <form action="gp-handler" method="get" class="form">
-        
+        <p>This means you're being taught full-time at a school, college, university or are home schooled.</p>
+
+    <form action="fte-higher-handler" method="get" class="form">
+
         <div class="form-group">
           
           <fieldset class="inline">
@@ -28,12 +28,12 @@ Eligibility Checker
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="gpScotWales" value="yes">
+              <input id="yes" type="radio" name="ftehigher" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="gpScotWales" value="no">
+              <input id="no" type="radio" name="ftehigher" value="no">
               <label for="no">No</label>
             </div>
             
@@ -41,14 +41,24 @@ Eligibility Checker
           
         </div>
         
-          <div class="form-group">
-            <input class="button" type="submit"  value="Next">
-          </div>
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
 
-      </form>
+    </form>
 
     </div>
-    </div>
+  </div>
+
 </main>
 
+
 {% endblock %}
+
+
+
+
+
+
+
+

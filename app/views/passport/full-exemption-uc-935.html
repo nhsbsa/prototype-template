@@ -1,0 +1,178 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<style>
+.import-panel {
+    font-weight: bold;
+    padding: 20px 0px 10px 40px;
+    background: url("/public/images/icon-information.png") no-repeat scroll 0px center;
+    }
+    .form-hint-list-item--valid{
+    color:black;
+    }
+    .tax-cred-img{
+    float: left;
+    margin-right: 5px;
+     background: url("/public/images/bsa/tax-cert.png") -71px 0;
+    width: 21px;
+    height: 21px;
+}
+    .container {
+    width: 200px;
+    height: 120px;
+}
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}
+.heading-margin{
+  margin-top: 0em;
+}
+.print-link {
+ margin-top:2em;
+ margin-bottom:2em;
+ font-size: 16px;
+}
+.print-link a {
+ background:url(https://assets.publishing.service.gov.uk/government-frontend/icon-print-b04bc2c6b31f73054f79768fd91f76df0b164b247c0905d8ca07b45cfb4f9a3b.png) no-repeat 0 50%;
+ padding:0.5em 0 0.5em 28px
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+ .print-link a {
+  background-image:url(https://assets.publishing.service.gov.uk/government-frontend/icon-print-2x-685277484e948f6a848f303d3614e422e652a6a6536980501b893d9f4bbd9f4f.png);
+  background-size:16px 18px
+ }
+}
+
+.card{
+  width:50%;
+}
+ @media (max-width: 641px) {
+ .card {
+  width:100%;
+ }
+}
+
+</style>
+
+
+
+<main id="content" role="main">
+<!-- <a href="javascript:history.go(-1)" class="link-back">Back</a> -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    <div class="done-panel">
+        
+        <h1 class="heading-xlarge" style="margin-top:0"></h1>
+              <h2 class="heading-large" style="margin-top: 0.5em">
+<!--         <span class="heading-secondary" style="color:white">Based on what you've told us</span> -->
+        You don't need to apply<br><span class="heading-medium">You already get help with NHS costs</span>
+      </h2>
+        
+      </div>
+
+ <p class="lede">
+          Because you get Universal Credit and have a take-home pay of £935 or less:
+        </p>
+
+<!-- under 20 -->
+<!--          <p class="lede">
+          Because your parent or guardian gets Child Tax Credit for you and has a household income of £15,276 or less:
+        </p> -->
+
+
+              </div>
+      </div>
+          <div class="grid-row">
+    <div class="column-two-thirds">
+<h2 class="heading-medium" style ="margin-top: 0">You get free:</h2>
+
+
+
+  <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental check-ups and treatment
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+  </ul>
+<h2 class="heading-medium ">You get money off:</h2>
+    <ul>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       new glasses or contact lenses
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        repairing or replacing your glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       travel for NHS treatment
+    </li>
+  </ul>
+  <br>
+          <div class="panel panel-border-wide" style="padding:0.5rem 2rem 1rem 1rem; margin-bottom:2rem">
+          <p>Any children under 20 included on your tax credit claim are also entitled to the same help. </p>
+        </div>
+        <hr>
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            Your take-home pay changes each assessment period. To avoid any possible penalty charge, check before you claim.
+          </strong>
+        </div>
+
+
+
+
+
+
+      <h2 class="heading-medium">How to get your help</h2>
+    <p>You don't have to do anything more, although you may have to show proof you get Universal Credit to your pharmacist, optician or dentist.</P>
+      You can use your latest Universal Credit award notice as proof, this can be either the letter or on your online account. 
+  
+      <hr>
+
+
+  
+<br>
+  <a href="javascript:history.go(-1)" class="link-back">Back to application</a>
+<!--   <p class="navigation"><a class="cancel" href="start">Still apply for help with NHS costs</a></p> -->
+  </div>
+  </div>
+
+
+  </div>
+
+</main>
+
+
+
+
+{% endblock %}
+

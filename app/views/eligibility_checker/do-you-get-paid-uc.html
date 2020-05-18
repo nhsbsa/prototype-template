@@ -1,0 +1,104 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<style>
+.panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: none;
+    padding-left:0em;
+    margin-bottom: 0em;
+    }
+
+.panel :first-child {
+    margin-top: -12px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    }
+
+.callout--attention {
+    border: 8px solid #0072ce;
+}
+
+.callout {
+    padding: 16px;
+    background-color: #fff;
+}
+
+@media (min-width: 925px){
+.callout {
+    padding: 32px;
+}
+}
+
+
+
+</style>
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">Do you get paid Universal Credit?</h1>
+
+      <form action="getuc-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset>
+            <legend class="visually-hidden">
+              Do you get Universal Credit?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="getuc" value="yes">
+              <label for="yes">Yes, I receive Universal Credit payments</label>
+            </div>
+
+    <div class="multiple-choice" data-target="uc-reveal">
+        <input id="notyet" type="radio" name="getuc" value="notyet">
+        <label for="notyet">Not yet, but I've applied</label>
+      </div>
+      
+
+
+            <p class="form-block">or</p>
+             <div class="multiple-choice">
+              <input id="no" type="radio" name="getuc" value="no">
+              <label for="no">No, I get a different benefit</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+      </div>
+      </div>
+
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

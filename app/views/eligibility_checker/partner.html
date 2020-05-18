@@ -8,32 +8,34 @@ Eligibility Checker
 {% block content %}
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <h1 class="heading-large">
-    Is your GP practice in Scotland or Wales?
+    Do you live with a partner?
   </h1>
-  <br>
-<p>If you live near the border with Scotland or Wales, you could be registered with a GP who isn't in England</p>
 
-      <form action="gp-handler" method="get" class="form">
-        
-        <div class="form-group">
+  <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
+
+
+  <form action="partner-handler" method="get" class="form">
+
+       <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Is your GP practice in Scotland or Wales?
+              Do you live with a partner?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="gpScotWales" value="yes">
+              <input id="yes" type="radio" name="partner" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="gpScotWales" value="no">
+              <input id="no" type="radio" name="partner" value="no">
               <label for="no">No</label>
             </div>
             
@@ -46,9 +48,15 @@ Eligibility Checker
           </div>
 
       </form>
-
     </div>
     </div>
 </main>
 
 {% endblock %}
+
+
+
+
+
+
+
