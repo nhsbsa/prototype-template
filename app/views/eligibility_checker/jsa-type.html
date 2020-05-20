@@ -1,0 +1,94 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block proposition_header %}
+{% endblock %}
+
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+
+<div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        
+        <header class="page-header">
+        
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which type of Jobseeker's Allowance (JSA) do you get?</h1>
+          </header>
+   
+
+<p>There are two types of JSA, income based and contribution based</p>
+
+    <details>
+      <summary><span class="summary">I'm not sure which type I get</span></summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+        <p>You may need:</p>
+        <ul class="list-bullet">
+          <li>a</li>
+        </ul>
+      </div>
+
+
+    </details>
+<br>
+
+<form action="jsa-handler" method="get" class="form">
+          
+          <fieldset class="form-group">
+
+           
+
+            <div class="multiple-choice">
+              <input id="IR" type="radio" name="esa" value="IR">
+              <label for="IR">Income related JSA</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="CR" type="radio" name="esa" value="CR">
+              <label for="CR">Contribution-related JSA</label>
+            </div>
+            
+          
+
+          </fieldset> 
+
+         
+          
+       
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+        
+        </form>
+      </div>
+   
+ 
+    
+</main>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block proposition_header %}
+{% endblock %}
+
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+
+<div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        
+        <header class="page-header">
+        
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What type of Pension Credit do you get?</h1>
+          </header>
+   
+
+<p>Pension Credit is a benefit with 2 parts - Guarantee Credit and Savings Credit</p>
+
+    <details>
+      <summary><span class="summary">I'm not sure which type I get</span></summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+        <p>You may need:</p>
+        <ul class="list-bullet">
+          <li>a</li>
+        </ul>
+      </div>
+
+
+    </details>
+<br>
+
+<form action="pension-credit-handler" method="get" class="form">
+          
+          <fieldset class="form-group">
+
+           
+
+            <div class="multiple-choice">
+              <input id="GConly" type="radio" name="pensioncredit" value="GConly">
+              <label for="GConly">Guarantee Credit only</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="GCSC" type="radio" name="pensioncredit" value="GCSC">
+              <label for="GCSC">Guarantee Credit with Savings Credit</label>
+            </div>
+            
+            <div class="multiple-choice">
+                <input id="SC" type="radio" name="pensioncredit" value="SC">
+                <label for="SC">Savings Credit <br>The maximum you can get per week is £13.97</label>
+              </div>
+          
+
+          </fieldset> 
+
+         
+          
+       
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+        
+        </form>
+      </div>
+   
+ 
+    
+</main>
+
+{% endblock %}

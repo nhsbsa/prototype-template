@@ -1,0 +1,92 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+ 
+    <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which type of tax credit do you get?</h1>
+      </header>
+
+      <form action="taxcredit-list-handler" method="get" class="form">
+
+       
+        <fieldset class="form-group">
+
+          <div class="multiple-choice multiple-radio">
+            <input id="TC" name="benefitlist" value="TC-benefit" type="checkbox">
+            <label for="TC">Working Tax Credit and Child Tax Credit together</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="IS" name="benefitlist" value="IS-benefit" type="checkbox">
+            <label for="IS">Working Tax Credit on its own, including a disability element</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="ESA" name="benefitlist" value="ESA-benefit" type="checkbox">
+            <label for="ESA">Child Tax Credit on its own</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="JSA" name="benefitlist" value="JSA-benefit" type="checkbox">
+            <label for="JSA">Working Tax Credit on its own</span><br></label>
+          </div>
+
+        </fieldset>
+
+          <details>
+            <summary><span class="summary">I'm not sure what type I get</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+    
+              <p>You may need:</p>
+              <ul class="list-bullet">
+                <li>a</li>
+              </ul>
+            </div>
+    
+    
+          </details>
+    
+<br>
+         
+       
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

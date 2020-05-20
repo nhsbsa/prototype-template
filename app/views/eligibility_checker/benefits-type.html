@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get any of these benefits?</h1>
+      </header>
+
+      <form action="benefit-list-handler" method="get" class="form">
+
+       
+        <fieldset class="form-group">
+
+          <div class="multiple-choice multiple-radio">
+            <input id="TC" name="benefitlist" value="TC-benefit" type="checkbox">
+            <label for="TC">Tax credit</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="IS" name="benefitlist" value="IS-benefit" type="checkbox">
+            <label for="IS">Income Support</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="ESA" name="benefitlist" value="ESA-benefit" type="checkbox">
+            <label for="ESA">Employment and Support Allowance (ESA)</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="JSA" name="benefitlist" value="JSA-benefit" type="checkbox">
+            <label for="JSA">Jobseeker's Allowance (JSA)</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="PC" name="benefitlist" value="PC-benefit" type="checkbox">
+            <label for="PC">Pension Credit</span><br></label>
+          </div>
+
+       
+
+          <p class="form-block">or</p>
+
+
+          <div class="multiple-choice multiple-radio">
+            <input id="none" name="benefitlist" value="none-benefit" type="checkbox">
+            <label for="none">No, I don't get any of these</label>
+          </div>
+
+        </fieldset>
+
+          <details>
+            <summary><span class="summary">If your benefit isn't listed or recently changged</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+    
+              <p>You may need:</p>
+              <ul class="list-bullet">
+                <li>a</li>
+              </ul>
+            </div>
+    
+    
+          </details>
+
+
+
+
+     <br>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

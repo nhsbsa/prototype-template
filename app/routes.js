@@ -92,20 +92,38 @@ var thisYear = 2020;
 
    // tax-credits
    router.get(/taxcredits-handler/, function (req, res) {
+  var age = req.session.data['age'];
+  
+     
     if (req.query.taxcredits === 'yes') {
     
     res.redirect('do-you-get-paid-uc');
-    } else {
-      res.redirect('#');
-    }
+
+    } else if (req.query.taxcredits === 'no' && req.query.age <= 60) {
+      res.redirect('pregnant');
+
+    } else { res.redirect ('tax-credits')
+  }
   });
+
+ // router.get(/finalyeariteration4-handler/, function (req, res) {
+  //  var fulltimeedu = req.session.data['fulltimeedu'];
+    
+  //  if (req.query.finalyear == 'yes' && fulltimeedu == 'ft') {
+  //    res.redirect('/kickouts/students-developed');
+  //  } else if (req.query.finalyear == 'yes' && fulltimeedu == 'pt') {
+  //    res.redirect('live-with-parents');
+   // } else if (req.query.finalyear == 'no') {
+   //   res.redirect('live-with-parents');
+  //  }
+ // });
 
   //UC
   router.get(/getuc-handler/, function (req, res) {
     if (req.query.getuc == 'yes') {
       res.redirect('uc-claim-type');  
     } else if (req.query.getuc == 'no') {
-      res.redirect('#');    
+      res.redirect('benefits-type');    
       
     } else {
       res.redirect('while-waiting-uc');
@@ -137,4 +155,38 @@ router.get(/uc-income-435-handler/, function (req, res) {
   } else {
     res.redirect('#');
   }
+});
+
+
+//benefits-type
+
+router.get(/benefit-list-handler/, function (req, res) {
+
+ 
+
+  if (req.query.benefitlist.includes('TC-benefit')) {
+    res.redirect('tax-credit-type');
+  } else if (req.query.benefitlist.includes('IS-benefit')) {
+    res.redirect('../passport/full-exemption-benefits-income-support');
+  } else if (req.query.benefitlist.includes('ESA-benefit')) {
+    res.redirect('esa-type');
+  } else if (req.query.benefitlist.includes('JSA-benefit')) {
+    res.redirect('jsa-type');
+  } else if (req.query.benefitlist.includes('PC-benefit')) {
+    res.redirect('pension-credit-type');
+  } else if (req.query.benefitlist.includes('none-benefit')) {
+    res.redirect('pregnant');
+
+  } else if (req.query.benefitlist.toString() == 'TC-benefit,IS-benefit') {
+    res.redirect('../passport/full-exemption-benefits-income-support');
+  } else if (req.query.benefitlist.toString() == 'TC-benefit,IS-benefit,ESA-benefit') {
+    res.redirect('../passport/full-exemption-benefits-income-support');
+  } else if (req.query.benefitlist.toString() == 'TC-benefit,IS-benefit,ESA-benefit,JSA-benefit') {
+    res.redirect('../passport/full-exemption-benefits-income-support');
+  } else if (req.query.benefitlist.toString() == 'TC-benefit,IS-benefit,ESA-benefit,JSA-benefit,PC-benefit') {
+    res.redirect('../passport/full-exemption-benefits-income-support');
+  } else if (req.query.benefitlist.toString() == 'TC-benefit,ESA-benefit') {
+    res.redirect('tax-credit-type');
+  
+  } 
 });
