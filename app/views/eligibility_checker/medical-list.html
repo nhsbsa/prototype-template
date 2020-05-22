@@ -1,0 +1,93 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/smart_answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h2 class="heading-large">To check what help you can get with NHS charges, we need to know if you're affected by any of these conditions</h2>
+
+       <p>If you're unsure about the name of your condition or treatment, check with your doctor.</p>
+
+    <form action="medical-list-handler" method="get" class="form">
+
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              medical list
+            </legend>
+            
+           
+            <ul class="list list-bullet">
+          
+                <li><strong style="font-weight: bold;">Cancer and are undergoing treatment</strong></li>
+                <p>Including treatment for the effects of cancer or the effects of cancer treatment</p>
+                <li><strong style="font-weight: bold;">Epilepsy</strong></li>
+                <p>Which needs continuous anticonvulsive therapy </p>
+                <li><strong style="font-weight: bold;">A continuing physical disability </strong></li>
+                <p>Which means you can't go out without the help of another person</p>
+                <li><strong style="font-weight: bold;">A permanent fistula which needs continuous surgical dressing or an appliance </strong></li>
+                <p>For example, caecostomy, colostomy, laryngostomy or ileostomy</p>
+                <li><strong style="font-weight: bold;">Diabetes insipidus and other forms of hypopituitarism </strong></li>
+<br>
+                <li><strong style="font-weight: bold;"> Myxoedema </strong></li>
+                <p>For example, hypothyroidism which needs thyroid hormone replacement</p>
+
+                <li><strong style="font-weight: bold;"> Hypoadrenalism, where specific substitution therapy is essential </strong></li>
+                <p>For example, Addison's Disease</p>
+                <li><strong style="font-weight: bold;"> Myasthenia gravis </strong></li>
+                <p>Where an autoimmune condition affects the nerves and muscles</p>
+              </ul>
+
+<p>To check what help you can get with NHS charges, we need to know if you're affected by any of these conditions</p>
+
+
+
+
+
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="medicalist" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="medicalist" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+    </form>
+
+    </div>
+  </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

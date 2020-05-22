@@ -1,0 +1,65 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/smart_answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h2 class="heading-large">Is your household income £15,276 or less?</h2>
+
+        <p>This is the income that is used to work out your Tax Credit payments.</p>
+        <p>You can find this on your current tex creadit award notice or contact the tax credits helpline.</p>
+
+    <form action="household-handler" method="get" class="form">
+
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Household income
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="household" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="household" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+    </form>
+
+    </div>
+  </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

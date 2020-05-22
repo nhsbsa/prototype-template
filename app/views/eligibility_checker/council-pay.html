@@ -1,0 +1,64 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+Eligibility Checker
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/smart_answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h2 class="heading-large">Do you get help to pay for your care home from your local council?</h2>
+
+       <p>If you're not sure, ask the home manager or matron</p>
+
+    <form action="councilpay-handler" method="get" class="form">
+
+        <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you get help?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="councilpay" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="councilpay" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <div class="form-group">
+          <input class="button" type="submit"  value="Next">
+        </div>
+
+    </form>
+
+    </div>
+  </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

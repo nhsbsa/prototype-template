@@ -90,33 +90,25 @@ var thisYear = 2020;
     }
   });
 
-   // tax-credits
+   // tax-credits - NEED TO CHECK THIS
    router.get(/taxcredits-handler/, function (req, res) {
-  var age = req.session.data['age'];
-  
+     var dobyearBeta = req.query.dobyearBeta;
+    var age = (thisYear - req.query.dobyearBeta);
+    console.log(age);
      
+
     if (req.query.taxcredits === 'yes') {
     
     res.redirect('do-you-get-paid-uc');
 
-    } else if (req.query.taxcredits === 'no' && req.query.age <= 60) {
+    } else if (req.query.taxcredits === 'no' && age <= 60) {
       res.redirect('pregnant');
 
-    } else { res.redirect ('tax-credits')
+    } else { res.redirect ('pregnant')
   }
   });
 
- // router.get(/finalyeariteration4-handler/, function (req, res) {
-  //  var fulltimeedu = req.session.data['fulltimeedu'];
-    
-  //  if (req.query.finalyear == 'yes' && fulltimeedu == 'ft') {
-  //    res.redirect('/kickouts/students-developed');
-  //  } else if (req.query.finalyear == 'yes' && fulltimeedu == 'pt') {
-  //    res.redirect('live-with-parents');
-   // } else if (req.query.finalyear == 'no') {
-   //   res.redirect('live-with-parents');
-  //  }
- // });
+
 
   //UC
   router.get(/getuc-handler/, function (req, res) {
@@ -132,7 +124,7 @@ var thisYear = 2020;
 
 // UC-type
 router.get(/uc-type-handler/, function (req, res) {
-  if (req.query.ucElement === 'yes') {
+  if (req.query.ucElement == 'yes') {
   res.redirect('uc-income-935');
   } else {
     res.redirect('uc-income-435');
@@ -141,7 +133,7 @@ router.get(/uc-type-handler/, function (req, res) {
 
 //UC 935
 router.get(/uc-income-935-handler/, function (req, res) {
-  if (req.query.ucIncome935 === 'yes') {
+  if (req.query.ucIncome935 == 'yes') {
   res.redirect('../passport/full-exemption-uc-935');
   } else {
     res.redirect('#');
@@ -150,7 +142,7 @@ router.get(/uc-income-935-handler/, function (req, res) {
 
 //UC 935
 router.get(/uc-income-435-handler/, function (req, res) {
-  if (req.query.ucIncome435 === 'yes') {
+  if (req.query.ucIncome435 == 'yes') {
   res.redirect('../passport/full-exemption-uc');
   } else {
     res.redirect('#');
@@ -189,4 +181,122 @@ router.get(/benefit-list-handler/, function (req, res) {
     res.redirect('tax-credit-type');
   
   } 
+});
+
+//pension-credit-type
+router.get(/pension-credit-handler/, function (req, res) {
+
+
+  if (req.query.pensioncredit == 'GConly') {
+    res.redirect('#');
+  } else if (req.query.pensioncredit == 'GCSC') {
+    res.redirect('#');
+  } else if (req.query.pensioncredit == 'SC') {
+    res.redirect('#');
+  
+  }
+});
+
+//tax-credit types - NEED TO ADD AGE VARIABLE
+router.get(/taxcredit-list-handler/, function (req, res) {
+
+
+  if (req.query.taxcreditlist == 'WTC') {
+    res.redirect('pregnant');
+  
+  } else {
+    res.redirect('household-income');
+  }
+});
+
+
+//pregnant
+router.get(/pregnant-handler/, function (req, res) {
+
+
+  if (req.query.pregnant == 'yes') {
+    res.redirect('war-pension');
+  
+  } else {
+    res.redirect('war-pension');
+  }
+});
+
+
+
+//war-pension
+router.get(/warpension-handler/, function (req, res) {
+  var countryBeta = req.session.data ['countryBeta'];
+
+  if (req.query.warpension == 'yes' && countryBeta == 'scotlandgp') {
+    res.redirect('#');
+  
+  } else {
+    res.redirect('diabetes');
+  }
+});
+
+
+
+//diabetes
+router.get(/diabetes-handler/, function (req, res) {
+  var countryBeta = req.session.data ['countryBeta'];
+
+  if (req.query.diabetes == 'no' && countryBeta != 'walesgp') {
+    res.redirect('medical-list');
+  } else if (countryBeta == 'walesgp' && req.query.diabetes == 'no'){
+    res.redirect('glaucoma');
+
+  } else {
+    res.redirect('sugar-level');
+  }
+});
+
+
+//medical-list
+router.get(/medical-list-handler/, function (req, res) {
+
+
+  if (req.query.medicalist == 'yes') {
+    res.redirect('care-home');
+  
+  } else {
+    res.redirect('care-home');
+  }
+});
+
+//care-home
+router.get(/carehome-handler/, function (req, res) {
+
+
+  if (req.query.carehome == 'yes') {
+    res.redirect('council-pay');
+  
+  } else {
+    res.redirect('savings-16k');
+  }
+});
+
+//Savings-16k
+router.get(/savings16k-handler/, function (req, res) {
+
+
+  if (req.query.savings16k == 'yes') {
+    res.redirect('#');
+  
+  } else {
+    res.redirect('#');
+  }
+});
+
+//council pay for care home
+router.get(/councilpay-handler/, function (req, res) {
+
+
+  if (req.query.councilpay == 'yes') {
+    res.redirect('#');
+  
+  } else {
+    res.redirect('savings-23k');
+  }
 });
