@@ -300,3 +300,15 @@ router.get(/councilpay-handler/, function (req, res) {
     res.redirect('savings-23k');
   }
 });
+
+//esa type
+router.get(/esa-handler/, function (req, res) {
+
+
+  if (req.query.esa == 'IR') {
+    res.redirect('../passport/full-exemption-esa-IR');
+  
+  } else {
+    res.redirect('#');
+  }
+});
